@@ -7,15 +7,9 @@ import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 
 export default class Header extends React.Component {
 
-    AddPostModalRef = ({handleShow}) => {
-        this.showModal = handleShow;
-    }
 
-    onAddNewPostClick = () => {
-        this.showModal();
-    }
-    
     render() {
+
         return (
             <Navbar collapseOnSelect expand="md" bg="light">
                 <Navbar.Brand href="#home">Good News</Navbar.Brand>
@@ -27,8 +21,8 @@ export default class Header extends React.Component {
                         <NavItem eventkey={3} href="/contact"><Nav.Link as={NavLink} to="/contact">Contact</Nav.Link></NavItem>
                     </Nav>
                 </Navbar.Collapse>
-                <Button variant="primary" onClick={this.onAddNewPostClick}>Add new article</Button>
-                <AddPostModal ref={this.AddPostModalRef}></AddPostModal>
+                <Button variant="primary" onClick={ () => this.AddPostModal.handleShow() }>Add new article</Button>
+                <AddPostModal ref={(apModal) => {this.AddPostModal = apModal;}}></AddPostModal>
             </Navbar>
         )
     }
