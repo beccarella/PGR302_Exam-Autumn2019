@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from '../Components/Header';
+import { Container } from 'react-bootstrap';
+import SendEmail from '../Components/SendEmail';
 
 const Contact = () => {
     return (
-        <div>
-            <Header/>
+        <Container>
             <section>
                 <h3>Contact</h3>
-                <p>How to contact us: Don't.</p>
+                <SendEmail/>
             </section>
-        </div>
+        </Container>
     )
 }
 
