@@ -14,7 +14,7 @@ function SendEmail() {
             <Form>
                 <Form.Label>Your email address</Form.Label>
                 <Form.Control type="text" placeholder="Enter email address"/>
-                <Button onClick={() => dispatch(incrementEmailList())}></Button>
+                <Button onClick={() => dispatch(incrementEmailList())}>Send</Button>
             </Form>
             <p>Number of emails sent: {numberOfEmails}</p>
         </Container>
