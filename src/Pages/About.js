@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from '../Components/Header'
+import { Container } from 'react-bootstrap';
+
 
 const About = () => {
     return (
-        <div>
-            <Header/>
+        <Container>
             <section>
                 <h3>About</h3>
                 <p>We are dedicated to ...</p>
             </section>
-        </div>
+        </Container>
     )
 }
 

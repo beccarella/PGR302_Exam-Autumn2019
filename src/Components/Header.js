@@ -12,7 +12,7 @@ export default class Header extends React.Component {
 
         return (
             <Navbar collapseOnSelect expand="md" bg="light">
-                <Navbar.Brand href="#home">Good News</Navbar.Brand>
+                <Navbar.Brand>Good News</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">  
                     <Nav className="mr.auto">
