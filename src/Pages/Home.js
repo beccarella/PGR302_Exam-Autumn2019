@@ -1,12 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import {Button, Container} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 
-import Header from '../Components/Header';
-import Card from '../Components/Card';
-import AddPostModal from '../Components/AddPostModal'
+import Card from '../Components/ArticleCard';
+
 
 const webAPIUrl = "https://localhost:5001/newsarticles";
+
+/**
+ * Container for ArticleCard
+ */
 
 class Home extends React.Component {
     constructor(props) {
@@ -14,14 +17,6 @@ class Home extends React.Component {
         this.state = {
             news: []
         }
-    }
-
-    AddPostModalRef = ({handleShow}) => {
-        this.showModal = handleShow;
-    }
-
-    onAddNewPostClick = () => {
-        this.showModal();
     }
 
     componentDidMount() {
@@ -35,14 +30,13 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                <Header />  
-                <AddPostModal ref={this.AddPostModalRef}></AddPostModal>
-                <Container className="row justify-content-center">
-                    <Card news = { this.state.news } />
-                </Container>
-                <Button variant="primary" onClick={this.onAddNewPostClick}>Add new article</Button>
-            </div>
+            <Container>
+                <Row>
+                    <Col lg={true}>
+                        <Card news = {this.state.news} />
+                    </Col>
+                </Row> 
+            </Container>
         )
     }
 }

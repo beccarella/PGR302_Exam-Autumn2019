@@ -5,6 +5,7 @@ import {Modal, Form, Col, Button} from 'react-bootstrap';
 const webAPIUrl = "https://localhost:5001/newsarticles";
 
 export default class AddPostModal extends React.Component {
+
     constructor(props) {
         super(props);
         this.handleShow = this.handleShow.bind(this);
@@ -41,7 +42,6 @@ export default class AddPostModal extends React.Component {
         return imgUrl.name;
     }
 
-
     handleShow()  {
         this.setState({ show: true })
     }
@@ -49,7 +49,7 @@ export default class AddPostModal extends React.Component {
     handleClose(){
         this.setState({ show: false })
     }
-
+  
     onChange = (event) => {
         let newText = event.target.value;
         this.setState({[event.target.name]: newText});
@@ -69,14 +69,6 @@ export default class AddPostModal extends React.Component {
         }
         axios.post(webAPIUrl, article);
     }
-
-/*     createPost = (event) => {
-        event.preventDefault();
-        const { title, ingress, author, date, runningText, category } = this.state;
-        axios.post(
-            webAPIUrl, { title, ingress, author, date, runningText, category }
-        )
-    } */
 
     render() {
         const { title, ingress, author, date, runningText, category } = this.state;
